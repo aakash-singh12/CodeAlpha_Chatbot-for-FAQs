@@ -1,0 +1,211 @@
+/* ==========================================================================
+   Aetheris Voyage - Premium Cosmic Glassmorphism Stylesheet
+   ========================================================================== */
+
+/* Google Fonts fallback selection */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Orbitron', 'Inter', sans-serif;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(11, 12, 30, 0.4);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.25);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+}
+
+/* Glassmorphism Presets */
+.glass-panel {
+  background: rgba(15, 17, 36, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-input {
+  background: rgba(10, 11, 24, 0.7);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-input:focus {
+  border-color: rgba(139, 92, 246, 0.75);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.25), inset 0 0 5px rgba(139, 92, 246, 0.1);
+  background: rgba(15, 17, 36, 0.85);
+  outline: none;
+}
+
+/* Status Pulsing Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+    box-shadow: 0 0 18px rgba(6, 182, 212, 0.8);
+  }
+}
+
+.status-pulse-cyan {
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+@keyframes pulse-glow-violet {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+    box-shadow: 0 0 18px rgba(139, 92, 246, 0.8);
+  }
+}
+
+.status-pulse-violet {
+  animation: pulse-glow-violet 2.5s infinite ease-in-out;
+}
+
+/* Message Entry Animation */
+@keyframes slide-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.message-animate {
+  animation: slide-fade-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Typing Indicator Bouncing Dots */
+@keyframes bounce-dot {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+.typing-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #a78bfa;
+  animation: bounce-dot 1.2s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Glowing Border Hover Effects */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(6, 182, 212, 0.3) 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.glow-border:hover::after {
+  opacity: 1;
+}
+
+/* Neon Gradient Buttons */
+.btn-neon-violet {
+  background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 0 4px 14px 0 rgba(124, 58, 237, 0.3);
+}
+
+.btn-neon-violet:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(139, 92, 246, 0.5), 0 0 10px rgba(139, 92, 246, 0.2) inset;
+}
+
+.btn-neon-violet:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px 0 rgba(124, 58, 237, 0.4);
+}
+
+/* Smooth Sidebar Transitions */
+.sidebar-transition {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom styles for backdrop and particle space background */
+.space-gradient-text {
+  background: linear-gradient(135deg, #f5f5f7 20%, #a78bfa 60%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Message styling classes */
+.msg-bot {
+  border-top-left-radius: 2px;
+}
+
+.msg-user {
+  border-top-right-radius: 2px;
+  background: linear-gradient(135deg, #6d28d9 0%, #4c1d95 100%);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 0 4px 15px rgba(109, 40, 217, 0.15);
+}
